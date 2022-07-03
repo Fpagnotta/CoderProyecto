@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block info %} 
+
+
+
+
+<h2 style="font-family: Bebas Neue;margin-left:42rem;">Enter your credentials to login </h2>
+<form action="" method="POST" style="font-family: Bebas Neue;margin-left:45rem ;margin-top:3rem;">
+  {% csrf_token %}
+  <div class="form-group">
+    {{form.as_p}}
+  </div>
+  <input class="btn btn-info" type="submit" value="Submit" style="margin-left:5rem;" />
+</form>
+
+
+{% endblock %}

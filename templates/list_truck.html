@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block info %}
+  <h1 style="font-family: Bebas Neue;font-style: italic;margin-left: 50rem;">Camiones</h1>
+
+{% for truck in object_list %}
+
+  <div class="card" style="width: 18rem;margin-left: 40rem;font-family: Bebas Neue;">
+  {% if truck.image %} 
+  <img src="{{truck.image.url}}" class="card-img-top" alt="...">
+  {% endif %}
+    <div class="card-body">
+      <h5 class="card-title">Brand:{{truck.brand}}</h5>
+      <p class="card-text">Year of fabrication:{{truck.year}}.</p>
+      <p class="card-text">Price: ${{truck.price}}.</p>
+      <p class="card-text">Capacity: {{truck.capacity}}.</p>
+      <a href="/vehicles/truck-details/{{truck.id}}/" class="btn btn-info">See more</a>
+    </div>
+  </div>
+
+
+{% endfor %}    
+
+{% endblock %}
+
