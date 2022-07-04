@@ -2,9 +2,13 @@ from multiprocessing import context
 from django import template
 from django.shortcuts import render
 from django.urls import reverse
-from django.views.generic import UpdateView, CreateView, DeleteView, DetailView, ListView
+from django.views.generic import UpdateView,ListView,CreateView
 from profiles.models import Profile 
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import authenticate, login, logout
+
 
 # Create your views here.
 
@@ -14,6 +18,7 @@ class profile_view(ListView):
     queryset: Profile.objects.filter
 
 
+
 class edit_profile(LoginRequiredMixin,UpdateView):
     model = Profile
     template_name = "edit_profile.html"
@@ -21,3 +26,19 @@ class edit_profile(LoginRequiredMixin,UpdateView):
     
     def get_success_url(self):
         return reverse("update_profile", kwargs= {"pk": self.object.pk})  
+
+
+# prueba 
+
+class create_profile(CreateView):
+    model = Profile
+    template_name = "auth/signup.html"
+    fields = ["first_name", "last_name", "phone","adress", "city","gender","email",]
+
+    def get_success_url(self):
+        return reverse("profile", kwargs={"pk": self.object.pk})
+
+
+
+
+

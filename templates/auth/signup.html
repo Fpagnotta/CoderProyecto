@@ -13,7 +13,7 @@ Register
 
 
 <h2 style="font-family: Bebas Neue;margin-left:38rem;">Complete the following fields to signup </h2>
-<form action="" method="POST" style="font-family: Bebas Neue;margin-left:40rem;margin-top:3rem;">
+<form action="" enctype="multipart/form-data" method="POST" style="font-family: Bebas Neue;margin-left:40rem;margin-top:3rem;">
   {% csrf_token %}
   <div class="form-group">
     {{form.as_p}}
