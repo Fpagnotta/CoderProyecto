@@ -1,8 +1,11 @@
-from multiprocessing import context
+
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from tu_vehiculo.forms import User_registration_form
+
+
+
 
 def index(request):
     print(request.user)
@@ -29,7 +32,6 @@ def login_view(request):
                     login(request,user)
                     context = {"message": f"Welcome {username}"}
                     return render(request, "index.html", context = context)
-                # esto no tiene sentid (PREGUNTAR!!!)
                 else: 
                     context = {"error": "User don't exists. Try Again"}
                     form = AuthenticationForm()
@@ -55,7 +57,7 @@ def signup_view(request):
     if request.method == "POST":
         form = User_registration_form(request.POST)
         
-        if form.is_valid:
+        if form.is_valid():
             form.save()
             username = form.cleaned_data["username"]
             password = form.cleaned_data["password1"]
