@@ -12,7 +12,7 @@ class Cars(models.Model):
     sku = models.CharField(max_length=30)
     price = models.FloatField()
     is_active = models.BooleanField(default=True)
-    image = models.ImageField (upload_to = 'media/cars',null=True, blank=True)
+    image = models.ImageField (upload_to = 'cars',null=True, blank=True)
         
     class Meta:
         verbose_name ='car'

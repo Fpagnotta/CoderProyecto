@@ -10,7 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 class profile_view(ListView):
     model = Profile
     template_name = "profile.html"
-    fields = "__all__"
+    queryset: Profile.objects.filter
 
 
 class detail_profile_view(DetailView):

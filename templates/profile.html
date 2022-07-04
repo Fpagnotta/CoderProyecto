@@ -1,13 +1,37 @@
 {% extends 'base.html' %}
 
-{% block title %}
-Profile
+{% block info %}
+
+<h1 style="font-family: Bebas Neue;font-style: italic;margin-left: 40rem;">YOU PROFILE</h1>
+
+
+{% for profile in object_list %}
+
+<div class="card" style="width: 18rem;margin-left: 40rem;font-family: Bebas Neue;">
+  {% if profile.profile_image %}
+  <img src="{{profile.profile_image.url}}" class="card-img-top" alt="...">
+  {% endif %}
+  <div class="card-body">
+    <h5 class="card-title">First Name:{{profile.first_name}}</h5>
+    <h5 class="card-title">Last Name:{{profile.last_name}}</h5>
+    <h5 class="card-title">Phone:{{profile.phone}}</h5>
+    <h5 class="card-title">Adress:{{profile.adress}}</h5>
+    <h5 class="card-title">City:{{profile.city}}</h5>
+    <h5 class="card-title">Gender:{{profile.gender}}</h5>
+    <h5 class="card-title">Email:{{profile.email}}</h5>
+    <a href="/vehicles/car-details/{{car.id}}/" class="btn btn-info">EDIT</a>
+</div>
+</div>
+
+{% endfor %}
+
+
 {% endblock %}
 
 
-{% block info %}
-{% if form %}
-  <h1 style="font-family: Bebas Neue;font-style: italic;margin-left: 40rem;">Complete the fields to update</h1>
+
+
+
 
 <form method="POST" enctype="multipart/form-data" action="" style="width: 18rem; margin-left: 45rem; margin-top: 10rem;font-family: Bebas Neue;">
   {% csrf_token %}
@@ -17,7 +41,7 @@ Profile
   <input class="btn btn-success" type="submit",value="Enviar">
 </form>
 
-{% endif%}
-{% endblock %}
+
+
 
 
