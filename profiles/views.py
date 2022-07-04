@@ -25,7 +25,7 @@ class edit_profile(LoginRequiredMixin,UpdateView):
     fields = "__all__"
     
     def get_success_url(self):
-        return reverse("update_profile", kwargs= {"pk": self.object.pk})  
+        return reverse("edit_profile", kwargs= {"pk": self.object.pk})  
 
 
 # prueba 
