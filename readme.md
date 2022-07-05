@@ -15,3 +15,8 @@ Francisco se encargo de : inicio de proyecto + models vehiculos + herencia de ht
 
 
 Florencia se encargo de : creacion de formularios de vehiculos + buscador + login y logout , signup + form , finalizacion de crud, restriccion de carga sin login , arreglos de usuarios + about us 
+
+
+Link de video explicando el funcionamiento del proyecto : https://drive.google.com/file/d/198FKscuzmYuycWJSi5nfxJiMxSJJwbc7/view
+
+
