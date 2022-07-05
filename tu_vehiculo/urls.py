@@ -16,7 +16,7 @@ Including another URLconf
 from os import stat
 from django.contrib import admin
 from django.urls import path,include
-from tu_vehiculo.views import index, login_view, logout_view, signup_view, about_us
+from tu_vehiculo.views import  index,login_view, logout_view, signup_view, about_us
 from django.conf import settings
 from django.conf.urls.static import static
 

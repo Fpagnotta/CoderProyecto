@@ -1,10 +1,11 @@
 
 from django.urls import path
-from vehiculos.views import delete_car_view, list_car, list_motorcycle, list_truck, create_car_view, create_motorcycle_view, create_truck_view,search_vehicle, detail_car_view, detail_motorcycle_view,detail_truck_view,delete_car_view,delete_motorcycle_view,delete_truck_view, update_car_view, update_motorcycle_view,update_truck_view
+from vehiculos.views import buy, delete_car_view, list_car, list_motorcycle, list_truck, create_car_view, create_motorcycle_view, create_truck_view,search_vehicle, detail_car_view, detail_motorcycle_view,detail_truck_view,delete_car_view,delete_motorcycle_view,delete_truck_view, update_car_view, update_motorcycle_view,update_truck_view
 
 
 urlpatterns = [
     path('cars/',list_car.as_view(),name = "cars"),
+    path('buy/',buy,name = "buy"),
     path('motorcycles/',list_motorcycle.as_view(),name ="motorcycles"),
     path('trucks/',list_truck.as_view(),name ="trucks"),
     path('create-car/', create_car_view.as_view(),name="create_car"),

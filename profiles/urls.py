@@ -1,4 +1,5 @@
 from django.urls import path
+from django.contrib.auth.models import User
 from profiles.views import edit_profile, profile_view,create_profile
 from tu_vehiculo.views import index, login_view, logout_view, about_us
 

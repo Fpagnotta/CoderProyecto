@@ -7,6 +7,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 
+def buy(request):
+    return render(request,'buy.html')
+
 # ------- ELEMENT WITH CLASS--------
 
 class list_car(ListView):
@@ -35,6 +38,7 @@ def search_vehicle(request):
     motorcycle = Motorcycles.objects.filter(brand__icontains = request.GET["Search"])
     context = {"cars": car, "trucks": truck, "motorcycles": motorcycle}
     return render(request,"search_vehicle.html", context = context)
+
 
 
 # --------- CREATE ELEMENT WITH CLASS ----
